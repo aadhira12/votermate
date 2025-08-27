@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="icon" href="https://cdn.glitch.global/729b0e3d-2b8e-4984-ad78-3eaa1270062a/votermateicon1.png?v=1729040971247" />
+    <title>VoterMate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <nav>
+    <div class="nav-container">
+        <div class="logo">
+            <a href="https://votermate.glitch.me/index.html" style="text-decoration: none; margin-right: 20px;">
+                <img src="https://cdn.glitch.global/729b0e3d-2b8e-4984-ad78-3eaa1270062a/Create%20a%20website%20banner%20in%20circular%20shape%20for%20text%20_VOTERMATE_%20in%20United%20States%20red%20white%20and%20blue.png?v=1729123874646" width="150px">
+            </a>
+        </div>
+        <div class="voter-info">
+           <div class="votermate">
+             <a href="https://votermate.glitch.me/index.html" style="color: white; text-decoration: none; "><span style="color:#B31942;"> Voter</span><span style="color:#1e74c9;">Mate</span></a><br>
+          </div> 
+          <div class="slogan">
+            <h6 style="font-size: 23px; font-weight: normal;">Your Voice, Your Vote: Empower Change Today!</h6>
+          </div>
+            
+        </div>
+      
+        <div class="countdown-container">
+            <h1 style="color:white; margin-top:5px;margin-right:20px;">Countdown to Election Day</h1>
+            <div id="countdown" style="margin-top:-20px;">
+                <div class="time-box">
+                    <span id="days">0</span>
+                    <p>Days</p>
+                </div>
+                <div class="time-box">
+                    <span id="hours">0</span>
+                    <p>Hours</p>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">0</span>
+                    <p>Minutes</p>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">0</span>
+                    <p>Seconds</p>
+                </div>
+            </div>
+          <h3 style="color:white; text-align:center; margin-right:-50px;">
+        Election Day (Nov 5)
+      </h3>
+        </div>
+      
+    </div>
+</nav>
+  <script>
+    const electionDate = new Date('November 5, 2024 00:00:00').getTime();
+
+// Update the countdown every second
+const countdown = setInterval(() => {
+    const now = new Date().getTime();
+    const timeLeft = electionDate - now;
+
+    // Time calculations for days, hours, minutes, and seconds
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    // Display the results
+    document.getElementById('days').innerText = days;
+    document.getElementById('hours').innerText = hours;
+    document.getElementById('minutes').innerText = minutes;
+    document.getElementById('seconds').innerText = seconds;
+
+    // If the countdown is over
+    if (timeLeft < 0) {
+        clearInterval(countdown);
+        document.getElementById('countdown').innerHTML = '<h2>Election Day is here!</h2>';
+    }
+}, 1000);
+  </script>
+ 
+ <style>
+        .container {
+            display: flex;
+         
+            align-items: flex-start;
+            margin: 20px;
+        }
+        .box {
+            width: 170.5rem;
+            margin: 0px;
+        }
+    </style>
+
+    <div class="container">
+       <div class="box" style="margin-right:50px;">
+   <h3 style="margin-left:10px;  width:300px;">
+     <a href="https://votermate.glitch.me/index.html" style="text-decoration:none; color:#162b4a;font-size:30px;">Home</a>
+      <br>
+       <br>
+   
+<a href="https://votermate.glitch.me/register.html" style="text-decoration:none;color:#B31942;font-size:30px;">Register to Vote </a>
+       
+        <br>
+        <br>
+
+
+           <a href="https://votermate.glitch.me/votebymail.html" style="text-decoration:none;color:#1e74c9;font-size:30px;">Vote By Mail</a>
+     <br>
+       <br>
+          <a href="https://votermate.glitch.me/elections.html" style="text-decoration:none; color:#162b4a;font-size:30px;">Elections & Ballot Locations </a>
+      <br>
+       <br>
+   
+          <a href="https://votermate.glitch.me/reminders.html" style="text-decoration:none;color:#B31942;font-size:30px;">Reminders</a>
+       <br>
+       <br>
+   
+          <a href="https://votermate.glitch.me/calendar.html" style="text-decoration:none;color:#1e74c9;font-size:30px;"> Election Calendar</a>
+    
+     
+     <br>
+       <br>
+     <a
+            href="https://votermate.glitch.me/representative.html"
+            style="text-decoration: none; color: #b31942; font-size: 30px"
+            >Know your Representative
+          </a>
+          <br />
+          <br />
+
+           <a href="https://votermate.glitch.me/results.html" style="text-decoration:none;color:#1e74c9;font-size:30px;">Results </a>
+     
+      
+      
+     
+  
+    </h3>
+        </div>
+        
+        <div class="box" style="margin:0px; width:7000px;">
+            
+          <br>
+          
+                
+
+
+    <h1>Find Your Representatives</h1>
+  <br>
+<h3 style="margin-left:60px; color:#333;">
+    Representatives are elected officials who speak and make decisions on behalf of their community in government. They listen to the concerns of the people in their area and work to create laws and policies that reflect those interests. By voting for representatives, citizens ensure their voices are heard and their needs are addressed in the larger government.
+  </h3>
+  <br>
+  <div style="margin-left:80px; margin-top:20px;">
+    <input type="text" id="address" placeholder="Enter your address">
+    <button onclick="getRepresentatives()">Search</button>
+  </div>
+    
+    <div id="results"></div>
+
+    <script src="civic_api.js"></script>
+
+        </div>
+    </div>
+  
+</body>
+</html>
+
+
+<script>
+
+const API_KEY = 'AIzaSyDdWQ8-Bc5DznpaGnOnmNiA9Rha5FBYyUA';  // Replace with your API key
+
+async function getRepresentatives() {
+    const address = document.getElementById('address').value;
+    const url = `https://civicinfo.googleapis.com/civicinfo/v2/representatives?key=${API_KEY}&address=${encodeURIComponent(address)}`;
+
+    console.log(`Request URL: ${url}`);  // Log the request URL for debugging
+
+    try {
+        const response = await fetch(url);
+        console.log(`Response Status: ${response.status}`);  // Log the status of the response
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Network response was not ok: ${response.status} ${response.statusText} - ${errorText}`);
+        }
+        const data = await response.json();
+        displayResults(data);
+    } catch (error) {
+        console.error('ERROR', error);
+        document.getElementById('results').innerText = `Error getting data: ${error.message}`;
+    }
+}
+
+function displayResults(data) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = '';
+
+    if (data && data.officials) {
+        data.officials.forEach((official, index) => {
+            const officialDiv = document.createElement('div');
+            officialDiv.className = 'official';
+
+            const name = document.createElement('h2');
+            name.innerText = official.name;
+            officialDiv.appendChild(name);
+
+            if (official.photoUrl) {
+                const photo = document.createElement('img');
+                photo.src = official.photoUrl;
+                officialDiv.appendChild(photo);
+            }
+
+            const office = document.createElement('p');
+            office.innerText = data.offices.find(office => office.officialIndices.includes(index)).name;
+            officialDiv.appendChild(office);
+
+            if (official.phones) {
+                const phone = document.createElement('p');
+                phone.innerText = `Phone: ${official.phones[0]}`;
+                officialDiv.appendChild(phone);
+            }
+
+            if (official.urls) {
+                const website = document.createElement('a');
+                website.href = official.urls[0];
+                website.innerText = 'Website';
+                website.target = '_blank';
+                officialDiv.appendChild(website);
+            }
+
+            resultsDiv.appendChild(officialDiv);
+        });
+    } else {
+        resultsDiv.innerText = 'No representatives found.';
+    }
+}
+
+
+
+</script>

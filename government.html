@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://cdn.glitch.global/729b0e3d-2b8e-4984-ad78-3eaa1270062a/votermateicon1.png?v=1729040971247" />
+<!-- Examples using the Leaflet plugin require Leaflet v0.7+ loaded before the Geocoder API -->
+<!-- Leaflet v0.7+ must be loaded before the Geocoder API to use the plugin -->
+<link rel="stylesheet" href="/path/to/leaflet.css" />
+<script src="/path/to/leaflet.js"></script>
+
+<!-- Geocoder API -->
+<link rel="stylesheet" href="https://dashboard.waterdata.usgs.gov/api/geocoder/1.0.0/geocoder.min.css" />
+<script src="https://dashboard.waterdata.usgs.gov/api/geocoder/1.0.0/geocoder.min.js"></script>
+    <!--
+      This is the page head - it contains info the browser uses
+      Like the title, which appears on the browser tab but not inside the page
+      Further down you'll see the content that displays in the page
+    -->
+    <title>Votermate</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+   <nav>
+    <div class="nav-container">
+        <div class="logo">
+            <a href="https://votermate.glitch.me/index.html" style="text-decoration: none; margin-right: 20px;">
+                <img src="https://cdn.glitch.global/729b0e3d-2b8e-4984-ad78-3eaa1270062a/Create%20a%20website%20banner%20in%20circular%20shape%20for%20text%20_VOTERMATE_%20in%20United%20States%20red%20white%20and%20blue.png?v=1729123874646" width="150px">
+            </a>
+        </div>
+        <div class="voter-info">
+           <div class="votermate">
+             <a href="https://votermate.glitch.me/index.html" style="color: white; text-decoration: none; "><span style="color:#B31942;"> Voter</span><span style="color:#1e74c9;">Mate</span></a><br>
+          </div> 
+          <div class="slogan">
+            <h6 style="font-size: 23px; font-weight: normal;">Your Voice, Your Vote: Empower Change Today!</h6>
+          </div>
+            
+        </div>
+      
+        <div class="countdown-container">
+            <h1 style="color:white; margin-top:5px;margin-right:20px;">Countdown to Election Day</h1>
+            <div id="countdown" style="margin-top:-20px;">
+                <div class="time-box">
+                    <span id="days">0</span>
+                    <p>Days</p>
+                </div>
+                <div class="time-box">
+                    <span id="hours">0</span>
+                    <p>Hours</p>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">0</span>
+                    <p>Minutes</p>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">0</span>
+                    <p>Seconds</p>
+                </div>
+            </div>
+          <h3 style="color:white; text-align:center; margin-right:-50px;">
+        Election Day (Nov 5)
+      </h3>
+        </div>
+      
+    </div>
+</nav>
+    <!-- The website JavaScript file -->
+    <script src="/script.js" defer></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://votinginfotool.org/css/compiled/vit.css"
+    />
+    <script src="https://votinginfotool.org/js/compiled/app.js"></script>
+    <br>
+<h1>
+  About the government
+    </h1>
+<br>
+    <h3 style="margin-left: 60px; color:#333;" >
+      The U.S. government is structured into three branches. The Executive Branch, led by the President, enforces laws. The Legislative Branch, consisting of Congress (the Senate and the House of Representatives), makes the laws. The Judicial Branch, headed by the Supreme Court, interprets laws and ensures they are applied fairly. This system of checks and balances ensures that no single branch becomes too powerful.
+    </h3>
+    <br>
+    
+    <h2 style="margin-left: 80px; color:#333;">
+      Congressional Districts of Massachusetts:
+    </h2>
+<script>
+      $(".input").focus(function () {
+        $(".close-btn").addClass("active");
+      });
+
+      $(".input").focusout(function () {
+        $(".close-btn").removeClass("active");
+        $(this).val("");
+      });
+    </script>
+    <!-- Chart code -->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/4/geodata/region/usa/congressional/maLow.js"></script>
+    <div id="chartdiv"></div>
+    <script>
+      /**
+       * ---------------------------------------
+       * This demo was created using amCharts 4.
+       *
+       * For more information visit:
+       * https://www.amcharts.com/
+       *
+       * Documentation is available at:
+       * https://www.amcharts.com/docs/v4/
+       * ---------------------------------------
+       */
+
+      // Create map instance
+      var chart = am4core.create("chartdiv", am4maps.MapChart);
+
+      // Set map definition
+      chart.geodata = am4geodata_region_usa_congressional_maLow;
+
+      // Set projection
+      chart.projection = new am4maps.projections.Miller();
+
+      // Create map polygon series
+      var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+
+      // Make map load polygon (like country names) data from GeoJSON
+      polygonSeries.useGeodata = true;
+
+      // Configure series
+      var polygonTemplate = polygonSeries.mapPolygons.template;
+      polygonTemplate.tooltipText = "{name}";
+      polygonTemplate.fill = am4core.color("#5fa8d3");
+
+      // Create hover state and set alternative fill color
+      var hs = polygonTemplate.states.create("hover");
+      hs.properties.fill = am4core.color("#bee9e8");
+    </script>
+    <br>
+<br>
+  
+    <br>
+ <div class="container">
+        <h2 style= "margin-left:80px;" id="title1cs"></h2>
+        <h3 style= "margin-left:80px;" >House of Representatives and Senate Lengths:</h3>
+        <table style= "margin-left:80px;" >
+            <thead>
+                <tr>
+                    <th></th>
+                    <th id="1c"></th>
+                    <th id="2c"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td id="1s">Start Date:</td>
+                    <td id="2s">Start Date:</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td id="1e">End Date:</td>
+                    <td id="2e">End Date:</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <style>
+    .container {
+    max-width: 800px;
+
+ 
+    padding: 20px;
+    border-radius: 8px;
+   
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+      tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+    </style>
+   <script>
+    /** @usage: Summary, L.Map option. */
+const map = L.map(<String>id, {
+    geocoderControl: <Object>options | {} | true,
+    // map options
+});
+
+/** @example: Add geocoder with options when map created. */
+const map = L.map('MapId', {
+    center: [40, -100],
+    geocoderControl: {
+        position    : 'topleft',  // leaflet L.Control option
+        interaction : 'suggest',  // geocoder plugin option
+        placeholder : 'Example 1' // geocoder option
+        // more plugin and geocoder options
+    },
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map tiles &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }),
+    zoom: 4
+    // more map options
+});
+
+/** @example: Access geocoder after map created. */
+map.geocoderControl.get().enable(false);
+    </script>
+    
+   
+    
+    
+
+  
+  </body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <link rel="icon" href="https://cdn.glitch.global/729b0e3d-2b8e-4984-ad78-3eaa1270062a/votermateicon1.png?v=1729040971247" />
+<!-- Examples using the Leaflet plugin require Leaflet v0.7+ loaded before the Geocoder API -->
+<!-- Leaflet v0.7+ must be loaded before the Geocoder API to use the plugin -->
+<link rel="stylesheet" href="/path/to/leaflet.css" />
+<script src="/path/to/leaflet.js"></script>
+
+<!-- Geocoder API -->
+<link rel="stylesheet" href="https://dashboard.waterdata.usgs.gov/api/geocoder/1.0.0/geocoder.min.css" />
+<script src="https://dashboard.waterdata.usgs.gov/api/geocoder/1.0.0/geocoder.min.js"></script>
+    <!--
+      This is the page head - it contains info the browser uses
+      Like the title, which appears on the browser tab but not inside the page
+      Further down you'll see the content that displays in the page
+    -->
+    <title>Votermate</title>
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  <nav>
+    <div class="nav-container">
+        <div class="logo">
+            <a href="https://votermate.glitch.me/index.html" style="text-decoration: none; margin-right: 20px;">
+                <img src="https://cdn.glitch.global/729b0e3d-2b8e-4984-ad78-3eaa1270062a/Create%20a%20website%20banner%20in%20circular%20shape%20for%20text%20_VOTERMATE_%20in%20United%20States%20red%20white%20and%20blue.png?v=1729123874646" width="150px">
+            </a>
+        </div>
+        <div class="voter-info">
+           <div class="votermate">
+             <a href="https://votermate.glitch.me/index.html" style="color: white; text-decoration: none; "><span style="color:#B31942;"> Voter</span><span style="color:#1e74c9;">Mate</span></a><br>
+          </div> 
+          <div class="slogan">
+            <h6 style="font-size: 23px; font-weight: normal;">Your Voice, Your Vote: Empower Change Today!</h6>
+          </div>
+            
+        </div>
+      
+        <div class="countdown-container">
+            <h1 style="color:white; margin-top:5px;margin-right:20px;">Countdown to Election Day</h1>
+            <div id="countdown" style="margin-top:-20px;">
+                <div class="time-box">
+                    <span id="days">0</span>
+                    <p>Days</p>
+                </div>
+                <div class="time-box">
+                    <span id="hours">0</span>
+                    <p>Hours</p>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">0</span>
+                    <p>Minutes</p>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">0</span>
+                    <p>Seconds</p>
+                </div>
+            </div>
+          <h3 style="color:white; text-align:center; margin-right:-50px;">
+        Election Day (Nov 5)
+      </h3>
+        </div>
+      
+    </div>
+</nav>
+    <!-- The website JavaScript file -->
+    <script src="/script.js" defer></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://votinginfotool.org/css/compiled/vit.css"
+    />
+    <script src="https://votinginfotool.org/js/compiled/app.js"></script>
+    <style>
+        .container {
+            display: flex;
+         
+            align-items: flex-start;
+            margin: 20px;
+        }
+        .box {
+            width: 31.5rem;
+            margin: 0px;
+        }
+    </style>
+
+    <div class="container">
+        <div class="box" style="margin-right:50px;">
+   <h3 style="margin-left:10px;  width:300px;">
+     <a href="https://votermate.glitch.me/index.html" style="text-decoration:none; color:#162b4a;font-size:30px;">Home</a>
+      <br>
+       <br>
+   
+<a href="https://votermate.glitch.me/register.html" style="text-decoration:none;color:#B31942;font-size:30px;">Register to Vote </a>
+       
+        <br>
+        <br>
+
+
+           <a href="https://votermate.glitch.me/votebymail.html" style="text-decoration:none;color:#1e74c9;font-size:30px;">Vote By Mail</a>
+     <br>
+       <br>
+          <a href="https://votermate.glitch.me/elections.html" style="text-decoration:none; color:#162b4a;font-size:30px;">Elections & Ballot Locations </a>
+      <br>
+       <br>
+   
+          <a href="https://votermate.glitch.me/reminders.html" style="text-decoration:none;color:#B31942;font-size:30px;">Reminders</a>
+       <br>
+       <br>
+   
+          <a href="https://votermate.glitch.me/calendar.html" style="text-decoration:none;color:#1e74c9;font-size:30px;"> Election Calendar</a>
+    
+       <br>
+       <br>
+   
+ <a
+            href="https://votermate.glitch.me/representative.html"
+            style="text-decoration: none; color: #b31942; font-size: 30px"
+            >Know your Representative
+          </a>
+          <br />
+          <br />
+
+           <a href="https://votermate.glitch.me/results.html" style="text-decoration:none;color:#1e74c9;font-size:30px;">Results </a>
+     
+      
+      
+     
+  
+    </h3>
+        </div>
+        <div class="box">
+        <link rel="stylesheet" type="text/css" href="https://votinginfotool.org/css/compiled/vit.css"/>
+<script src="https://votinginfotool.org/js/compiled/app.js"></script>
+<div id="_vit" style="min-width: 360px; max-width: 640px; height: 480px;"></div>
+<script>
+  var config = {
+    "logo": {"type":"default"},
+    "official-only": true
+  };
+  var loadVIT = function () {
+    if (typeof vit !== 'undefined'){
+      vit.core.init("_vit", config);
+    } else {
+      setTimeout(loadVIT, 500);
+    };
+  };
+  loadVIT();
+</script>
+      
+      
+    </div>
+  
+
+        <link href="https://static2.votesmart.io/widget/index.css" rel="stylesheet">
+        <script src="https://static2.votesmart.io/widget/index.js" type="text/javascript"></script> 
+       
+    
+      
+    </div>
+<!--     <div style="width:700px;">
+      <script type="text/javascript" src="https://register.rockthevote.com/assets/rtv-iframe.js"></script>  <script type="text/javascript">  RtvIframe.init({      partner: 39144,      source: "freetools"    })</script>
+    </div> -->
+      
+
+    <!-- Resources -->
+    <!-- <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/geodata/region/usa/congressional2022/usaCongressionalLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script> -->
+   
+  
+  </body>
+</html>
